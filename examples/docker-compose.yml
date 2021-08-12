@@ -5,6 +5,8 @@ services:
     image: jonasal/nginx-certbot:latest
     restart: unless-stopped
     environment:
+      # These variables takes precedence over those defined the env_file, so
+      # remove these if they are not used.
       - CERTBOT_EMAIL
       - STAGING
       - DHPARAM_SIZE
